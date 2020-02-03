@@ -32,5 +32,13 @@
             android:id="@+id/action_secondFragment_to_thirdFragment"
             app:destination="@id/thirdFragment"
             app:popUpTo="@+id/strartFragment" />
+        <argument
+            android:name="message "
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument
+            android:name="user"
+            app:argType="com.example.navcomponent.User"
+            app:nullable="true" />
     </fragment>
 </navigation>

@@ -35,7 +35,13 @@ public class StartFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_strartFragment_to_secondFragment);
+//                StartFragmentDirections.ActionStrartFragmentToSecondFragment action = StartFragmentDirections.actionStrartFragmentToSecondFragment();
+//                navController.navigate(R.id.action_strartFragment_to_secondFragment);
+                User user= new User(26,"Mahmoud Osman");
+                StartFragmentDirections.ActionStrartFragmentToSecondFragment action = StartFragmentDirections.actionStrartFragmentToSecondFragment(user);
+                action.setMessage("this is some message....");
+                navController.navigate(action);
+
             }
         });
     }

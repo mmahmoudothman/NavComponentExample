@@ -8,10 +8,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import static android.content.ContentValues.TAG;
 
 
 public class FinishFragment extends Fragment {
@@ -34,6 +37,16 @@ public class FinishFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Button button = view.findViewById(R.id.finishGameBtn);
         final NavController navController= Navigation.findNavController(view);
+
+        if (getArguments()!=null)
+        {
+            FinishFragmentArgs args=FinishFragmentArgs.fromBundle(getArguments());
+            String message= args.getMessage();
+            Log.i(TAG, "onViewCreated: "+message);
+            User user= args.getUser();
+            Log.i(TAG, "onViewCreated: "+user.getUsername());
+        }
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
