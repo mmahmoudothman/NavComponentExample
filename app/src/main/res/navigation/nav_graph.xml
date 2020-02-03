@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/strartFragment">
+
+    <fragment
+        android:id="@+id/strartFragment"
+        android:name="com.example.navcomponent.StartFragment"
+        android:label="fragment_strart"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_strartFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.navcomponent.RestartFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_restart" >
+        <action
+            android:id="@+id/action_thirdFragment_to_strartFragment"
+            app:destination="@id/strartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.navcomponent.FinishFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_finish" >
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment"
+            app:popUpTo="@+id/strartFragment" />
+    </fragment>
+</navigation>
